@@ -84,6 +84,12 @@
 
 // ---------- Menu mobile ----------
 
+// Nella pagina Contatti "Scrivimi" porterebbe alla pagina stessa:
+// il bottone è invisibile ma tiene il suo spazio, così il menu non si sposta.
+.header-cta--hidden {
+  visibility: hidden;
+}
+
 .menu-toggle {
   position: absolute;
   opacity: 0;
@@ -139,6 +145,11 @@
     & ~ .header-cta {
       display: inline-flex;
       margin-bottom: 20px;
+    }
+
+    // nel menu aperto non deve lasciare uno spazio vuoto
+    & ~ .header-cta--hidden {
+      display: none;
     }
 
     & + .burger .burger__open {

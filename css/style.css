@@ -199,6 +199,10 @@ img {
     font-weight: 600;
   }
 }
+.header-cta--hidden {
+  visibility: hidden;
+}
+
 .menu-toggle {
   position: absolute;
   opacity: 0;
@@ -248,6 +252,9 @@ img {
   .menu-toggle:checked ~ .header-cta {
     display: inline-flex;
     margin-bottom: 20px;
+  }
+  .menu-toggle:checked ~ .header-cta--hidden {
+    display: none;
   }
   .menu-toggle:checked + .burger .burger__open {
     display: none;
