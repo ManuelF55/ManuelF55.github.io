@@ -623,9 +623,14 @@ img {
 }
 
 .about-intro {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding-bottom: 96px;
-  color: #6f6c66;
+  color: #4a4741;
+}
+.about-intro p {
+  margin: 0;
 }
 
 .cv-section {
@@ -683,6 +688,18 @@ img {
   margin: 8px 0 0;
   color: #6f6c66;
   font-size: 14px;
+}
+
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .skills {

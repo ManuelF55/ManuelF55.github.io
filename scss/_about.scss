@@ -5,9 +5,15 @@
 // =========================================================
 
 .about-intro {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-16;
   padding-bottom: $space-96;
-  color: $color-text-muted;
+  color: $color-text-secondary;
+
+  p {
+    margin: 0;
+  }
 }
 
 .cv-section {
@@ -65,6 +71,18 @@
   margin: $space-8 0 0;
   color: $color-text-muted;
   font-size: $font-size-small;
+}
+
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: $space-32;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-16;
 }
 
 .skills {
