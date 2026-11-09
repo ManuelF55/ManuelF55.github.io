@@ -75,6 +75,8 @@ img {
 .eyebrow {
   margin: 0;
   color: #6f6c66;
+  font-weight: 400;
+  line-height: inherit;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -193,7 +195,7 @@ img {
   outline: 2px solid #111111;
   outline-offset: 4px;
 }
-.main-nav [aria-current=page] {
+.main-nav [aria-current] {
   text-decoration: underline;
   text-underline-offset: 4px;
 }

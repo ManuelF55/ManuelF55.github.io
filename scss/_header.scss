@@ -47,8 +47,8 @@
     }
   }
 
-  // pagina corrente
-  [aria-current="page"] {
+  // pagina corrente ("page") o sezione a cui appartiene la pagina ("true")
+  [aria-current] {
     text-decoration: underline;
     text-underline-offset: 4px;
   }
