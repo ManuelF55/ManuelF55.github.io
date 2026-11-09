@@ -203,9 +203,9 @@ img {
   visibility: hidden;
 }
 
-.menu-toggle {
-  position: absolute;
-  opacity: 0;
+.menu-target {
+  position: fixed;
+  top: 0;
 }
 
 .burger {
@@ -218,11 +218,7 @@ img {
   cursor: pointer;
 }
 
-.burger__close {
-  display: none;
-}
-
-.menu-toggle:focus-visible + .burger {
+.burger:focus-visible {
   border-radius: 8px;
   outline: 2px solid #111111;
 }
@@ -235,32 +231,35 @@ img {
   .burger {
     display: inline-flex;
   }
-  .menu-toggle:checked ~ .main-nav {
+  .burger--close {
+    display: none;
+  }
+  .menu-target:target ~ .main-nav {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
     padding: 8px 0 16px;
   }
-  .menu-toggle:checked ~ .main-nav a {
+  .menu-target:target ~ .main-nav a {
     font-family: "Epilogue", system-ui, sans-serif;
     font-size: 28px;
     font-weight: 700;
     letter-spacing: -0.02em;
     text-transform: none;
   }
-  .menu-toggle:checked ~ .header-cta {
+  .menu-target:target ~ .header-cta {
     display: inline-flex;
     margin-bottom: 20px;
   }
-  .menu-toggle:checked ~ .header-cta--hidden {
+  .menu-target:target ~ .header-cta--hidden {
     display: none;
   }
-  .menu-toggle:checked + .burger .burger__open {
+  .menu-target:target ~ .burger--open {
     display: none;
   }
-  .menu-toggle:checked + .burger .burger__close {
-    display: block;
+  .menu-target:target ~ .burger--close {
+    display: inline-flex;
   }
 }
 .hero {

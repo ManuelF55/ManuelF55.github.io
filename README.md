@@ -80,7 +80,7 @@ La cartella `tools/` contiene il compilatore Dart Sass e non va caricata su GitH
 
 ## Requisiti del corso
 
-- HTML e CSS (il menu mobile funziona con una checkbox, senza JavaScript); JavaScript solo per l'invio del form con EmailJS, esercitazione facoltativa della consegna
+- HTML e CSS (il menu mobile funziona con `:target`, senza JavaScript); JavaScript solo per l'invio del form con EmailJS, esercitazione facoltativa della consegna
 - Più pagine, con CV in HTML (`about.html`) e pagina contatti con form e campi `required`
 - Bootstrap 5.3 (griglia `row` / `col-lg-*` e reset)
 - Sass

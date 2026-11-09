@@ -41,12 +41,16 @@
     <div class="site-container site-header__inner">
       <a class="logo" href="index.html">Manuel Facen</a>
 
-      <!-- Menu mobile: la checkbox apre e chiude il menu, senza JavaScript -->
-      <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Apri o chiudi il menu">
-      <label class="burger" for="menu-toggle" aria-hidden="true">
-        <svg class="burger__open" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
-        <svg class="burger__close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </label>
+      <!-- Menu mobile: il link #menu apre il menu con :target, senza JavaScript.
+           Qualsiasi altro link cambia il target e quindi lo richiude.
+           Il target è fisso nella finestra, così la pagina non scorre quando si apre il menu. -->
+      <span class="menu-target" id="menu"></span>
+      <a class="burger burger--open" href="#menu" aria-label="Apri il menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </a>
+      <a class="burger burger--close" href="#menu-chiuso" aria-label="Chiudi il menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </a>
 
       <nav class="main-nav" aria-label="Menu principale">
         <a href="index.html#progetti" data-label="Progetti" aria-current="page">Progetti</a>

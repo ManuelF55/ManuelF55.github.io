@@ -2,9 +2,10 @@
 
 // =========================================================
 // Header sticky e menu
-// Su mobile il menu si apre senza JavaScript: una checkbox
-// nascosta (#menu-toggle) cambia stato quando si tocca il
-// burger, che è la sua <label>.
+// Su mobile il menu si apre senza JavaScript: il burger è un
+// link a #menu (uno span vuoto) e il menu resta aperto finché
+// lo span è il :target. Qualsiasi altro link cambia il target
+// e lo richiude, anche "Progetti" che resta nella stessa pagina.
 // =========================================================
 
 .site-header {
@@ -90,9 +91,10 @@
   visibility: hidden;
 }
 
-.menu-toggle {
-  position: absolute;
-  opacity: 0;
+// Fissa nella finestra: aprendo il menu la pagina non deve scorrere
+.menu-target {
+  position: fixed;
+  top: 0;
 }
 
 .burger {
@@ -105,11 +107,7 @@
   cursor: pointer;
 }
 
-.burger__close {
-  display: none;
-}
-
-.menu-toggle:focus-visible + .burger {
+.burger:focus-visible {
   border-radius: 8px;
   outline: 2px solid $color-text;
 }
@@ -124,8 +122,12 @@
     display: inline-flex;
   }
 
+  .burger--close {
+    display: none;
+  }
+
   // menu aperto
-  .menu-toggle:checked {
+  .menu-target:target {
     & ~ .main-nav {
       display: flex;
       flex-direction: column;
@@ -152,12 +154,12 @@
       display: none;
     }
 
-    & + .burger .burger__open {
+    & ~ .burger--open {
       display: none;
     }
 
-    & + .burger .burger__close {
-      display: block;
+    & ~ .burger--close {
+      display: inline-flex;
     }
   }
 }
