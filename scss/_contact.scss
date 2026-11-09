@@ -103,15 +103,10 @@
   }
 }
 
-.consent {
-  display: flex;
-  gap: 10px;
-  max-width: 34ch;
+// Nota sull'uso dei dati, accanto al bottone di invio
+.form-note {
+  max-width: 48ch;
+  margin: 0;
   color: $color-text-muted;
   font-size: 12px;
-
-  input {
-    margin-top: 3px;
-    accent-color: $color-text;
-  }
 }

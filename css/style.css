@@ -796,16 +796,11 @@ img {
   display: none;
 }
 
-.consent {
-  display: flex;
-  gap: 10px;
-  max-width: 34ch;
+.form-note {
+  max-width: 48ch;
+  margin: 0;
   color: #6f6c66;
   font-size: 12px;
-}
-.consent input {
-  margin-top: 3px;
-  accent-color: #111111;
 }
 
 .closing {
