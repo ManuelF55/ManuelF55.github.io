@@ -22,7 +22,7 @@
   justify-content: center;
   min-height: 100svh;
   padding-top: $header-height;
-  padding-bottom: 40px;
+  padding-bottom: $space-40;
 }
 
 .hero__text {
@@ -31,24 +31,24 @@
 
 .hero__lead {
   max-width: 44ch;
-  margin: 28px 0 36px;
+  margin: $space-32 0 $space-40;
   color: $color-text-secondary;
-  font-size: 18px;
+  font-size: $font-size-lead;
   line-height: 1.5;
 }
 
 // Immagine a destra, con sfumatura verso il beige sul lato sinistro
 .hero__media {
   position: absolute;
-  top: 0;
+  top: 5%;
   right: 0;
-  width: 50%;
-  height: 100%;
+  width: 45%;
+  height: 90%;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; // l'immagine si vede sempre intera, senza tagli
   }
 
   &::after {
@@ -63,23 +63,19 @@
 .status {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin: 0 0 32px;
-  padding: 6px 14px;
+  gap: $space-8;
+  margin: 0 0 $space-32;
+  padding: $space-8 $space-16;
   border: 1px solid rgba($color-text, 0.35);
   border-radius: $radius-pill;
-  font-size: 11px;
+  @include label(0.12em);
   font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
-.status__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: $color-available;
-}
+// Su mobile la forma colorata non arriva ai bordi dell'immagine: lo spazio
+// vuoto è il 15% della larghezza in alto e il 7,5% in basso. I calc() qui sotto
+// lo sottraggono, così i margini visibili restano 96px sopra e 40px sotto.
+$hero-media-width: min(72vw, 340px);
 
 @include mobile {
   .hero {
@@ -90,23 +86,19 @@
 
   .hero__content {
     min-height: 0;
-    padding-top: calc(40px - min(5.4vw, 25.5px));
-    padding-bottom: 48px;
+    padding-top: calc(#{$space-40} - #{$hero-media-width} * 0.075);
+    padding-bottom: $space-48;
   }
 
   // su mobile l'immagine va sopra il testo
   .hero__media {
     position: relative;
+    top: 0;
     order: -1;
-    width: 72%;
-    max-width: 340px;
+    width: $hero-media-width;
     height: auto;
-    margin: calc(104px - min(10.8vw, 51px)) auto 0;
+    margin: calc(#{$space-96} - #{$hero-media-width} * 0.15) auto 0;
     aspect-ratio: 4 / 5;
-
-    img {
-      object-fit: contain;
-    }
 
     &::after {
       display: none;
@@ -114,16 +106,10 @@
   }
 
   .status {
-    gap: 6px;
-    margin-bottom: 20px;
-    padding: 4px 10px;
-    font-size: 9px;
+    gap: $space-8;
+    margin-bottom: $space-24;
+    padding: $space-4 $space-8;
     letter-spacing: 0.1em;
-  }
-
-  .status__dot {
-    width: 6px;
-    height: 6px;
   }
 }
 
@@ -136,36 +122,36 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100svh - #{$header-height});
-  margin-bottom: 64px;
+  margin-bottom: $space-64;
   text-align: center;
 
   .eyebrow {
-    padding-top: 40px;
+    padding-top: $space-40;
   }
 }
 
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: 144px;
-  padding-bottom: 128px;
+  gap: $space-160;
+  padding-bottom: $space-128;
 }
 
 .project-card__name {
-  margin: 3px 0;
+  margin: $space-4 0;
 }
 
 .project-card__description {
   max-width: 42ch;
-  margin: 16px 0 20px;
+  margin: $space-16 0 $space-24;
   color: $color-text-muted;
-  font-size: 14px;
+  font-size: $font-size-small;
 }
 
 .project-card__credits {
-  margin: 0 0 28px;
+  margin: 0 0 $space-32;
   color: $color-text-muted;
-  font-size: 13px;
+  font-size: $font-size-caption;
 
   strong {
     color: $color-text;
@@ -190,7 +176,7 @@
   left: 12%;
   width: 110%;
   aspect-ratio: 16 / 10;
-  border-radius: 8px;
+  border-radius: $radius-sm;
   overflow: hidden;
   background: $color-image-placeholder;
   box-shadow: $shadow-screen;

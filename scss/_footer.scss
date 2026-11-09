@@ -8,29 +8,27 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 32px;
-  padding: 128px 0;
+  gap: $space-32;
+  padding: $space-128 0;
   border-top: 1px solid $color-border;
 }
 
 .site-footer {
-  padding: 24px 0;
+  padding: $space-24 0;
   border-top: 1px solid $color-border;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  @include label;
 }
 
 .site-footer__inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 16px;
+  gap: $space-16;
 }
 
 .social-links {
   display: flex;
-  gap: 20px;
+  gap: $space-24;
   margin: 0;
   padding: 0;
   list-style: none;

@@ -8,7 +8,7 @@ body {
   background: $color-bg;
   color: $color-text;
   font-family: $font-body;
-  font-size: 15px;
+  font-size: $font-size-default;
   line-height: 1.6;
 }
 
@@ -32,11 +32,11 @@ img {
   top: -100px;
   left: $gutter;
   z-index: 20;
-  padding: 8px 16px;
+  padding: $space-8 $space-16;
   border-radius: $radius-pill;
   background: $color-text;
   color: $color-white;
-  font-size: 13px;
+  font-size: $font-size-caption;
 
   &:focus {
     top: 12px;
@@ -84,7 +84,7 @@ img {
 .title-sm {
   margin: 0;
   font-family: $font-heading;
-  font-size: 18px;
+  font-size: $font-size-title-sm;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -93,15 +93,33 @@ img {
 .eyebrow {
   margin: 0;
   color: $color-text-muted;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  @include label;
 }
 
 // Paragrafi grandi
 .lead-text {
   margin: 0;
   color: $color-text-secondary;
-  font-size: 18px;
+  font-size: $font-size-lead;
   line-height: 1.55;
+}
+
+// ---------- Elementi usati da più pagine ----------
+
+// Intestazione delle pagine About e Contatti
+.page-header {
+  padding: $space-128 0 $space-64;
+}
+
+// Pallino verde "disponibile": Home e Contatti
+.status__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $color-available;
+
+  @include mobile {
+    width: 6px;
+    height: 6px;
+  }
 }

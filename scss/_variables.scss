@@ -1,11 +1,12 @@
 // =========================================================
-// Variabili del design system: colori, font, spazi, raggi.
-// Cambiando un valore qui si aggiorna tutto il sito.
+// Variabili del design system: colori, font, dimensioni dei testi,
+// spazi, raggi, ombre e breakpoint.
+// Margini, padding e gap del sito usano solo la scala $space-*.
 // =========================================================
 
 // Colori
 $color-bg: #f4f2ed;
-$color-bg-header: rgba(244, 242, 237, 0.9);
+$color-bg-header: rgba($color-bg, 0.9);
 $color-text: #111111;
 $color-text-secondary: #4a4741;
 $color-text-muted: #6f6c66;
@@ -21,6 +22,28 @@ $color-available: #2fbf71;
 $font-heading: "Epilogue", system-ui, sans-serif;
 $font-body: "Inter", system-ui, sans-serif;
 
+// Dimensioni dei testi
+$font-size-label: 11px;        // etichette in maiuscolo
+$font-size-caption: 13px;
+$font-size-small: 14px;
+$font-size-default: 15px;
+$font-size-lead: 18px;
+$font-size-title-sm: 18px;
+$font-size-nav-mobile: 28px;
+
+// Spazi: la scala del design system
+$space-4: 4px;
+$space-8: 8px;
+$space-16: 16px;
+$space-24: 24px;
+$space-32: 32px;
+$space-40: 40px;
+$space-48: 48px;
+$space-64: 64px;
+$space-96: 96px;
+$space-128: 128px;
+$space-160: 160px;
+
 // Spazi e misure
 $gutter: 24px;           // margine laterale della pagina
 $content-max: 1320px;    // larghezza massima del contenuto
@@ -28,6 +51,7 @@ $header-height: 64px;
 $touch-target: 44px;     // altezza minima di bottoni e link toccabili
 
 // Raggi
+$radius-sm: 10px;
 $radius-image: 16px;
 $radius-card: 20px;
 $radius-pill: 999px;
@@ -46,7 +70,9 @@ $projects: (
   "forma": (tint: #dcdcd8, ratio: 3),
 );
 
-// Breakpoint: sotto i 768px il sito usa il layout mobile
+// Breakpoint: sotto i 768px il sito usa il layout mobile.
+// È lo stesso limite delle classi col-md-* di Bootstrap, così griglia e stili
+// cambiano insieme.
 $breakpoint-mobile: 767px;
 
 @mixin mobile {
@@ -59,4 +85,11 @@ $breakpoint-mobile: 767px;
   @media (min-width: $breakpoint-mobile + 1) {
     @content;
   }
+}
+
+// Etichetta in maiuscolo: menu, bottoni, badge, didascalie...
+@mixin label($spacing: 0.1em) {
+  font-size: $font-size-label;
+  letter-spacing: $spacing;
+  text-transform: uppercase;
 }

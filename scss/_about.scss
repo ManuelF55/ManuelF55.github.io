@@ -4,33 +4,27 @@
 // About: presentazione e CV
 // =========================================================
 
-.page-header {
-  padding: 112px 0 56px;
-}
-
 .about-intro {
   margin: 0;
-  padding-bottom: 80px;
+  padding-bottom: $space-96;
   color: $color-text-muted;
 }
 
 .cv-section {
   --bs-gutter-y: 0; // senza, la riga sale di 40px e copre il margine della sezione sopra
-  padding: 40px 0;
+  padding: $space-40 0;
   border-top: 1px solid $color-border;
 }
 
 .cv-section__title {
   margin: 0;
   color: $color-text-muted;
-  font-size: 11px;
+  @include label;
   font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 
-  // sotto i 992px il titolo va sopra il contenuto
-  @media (max-width: 991.98px) {
-    margin-bottom: 40px;
+  // su mobile il titolo va sopra il contenuto
+  @include mobile {
+    margin-bottom: $space-40;
   }
 }
 
@@ -43,8 +37,8 @@
 .cv-item {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 32px;
-  padding: 32px 0;
+  gap: $space-8 $space-32;
+  padding: $space-32 0;
   border-top: 1px solid $color-border;
 
   &:first-child {
@@ -59,7 +53,7 @@
 
 .cv-item__date {
   flex: 0 0 144px;
-  font-size: 14px;
+  font-size: $font-size-small;
 }
 
 .cv-item__body {
@@ -68,23 +62,23 @@
 }
 
 .cv-item__text {
-  margin: 10px 0 0;
+  margin: $space-8 0 0;
   color: $color-text-muted;
-  font-size: 14px;
+  font-size: $font-size-small;
 }
 
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: $space-8;
   margin: 0;
   padding: 0;
   list-style: none;
 
   li {
-    padding: 5px 15px;
+    padding: $space-4 $space-16;
     border: 1px solid $color-text;
     border-radius: $radius-pill;
-    font-size: 13px;
+    font-size: $font-size-caption;
   }
 }
