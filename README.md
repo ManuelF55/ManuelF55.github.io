@@ -65,8 +65,7 @@ La cartella `tools/` contiene il compilatore Dart Sass e non va caricata su GitH
 
 ## Prima della pubblicazione
 
-- L'indirizzo del sito nei tag Open Graph è `https://manuelf55.github.io/portfolio/`: se chiami il repository in un altro modo, aggiornalo in tutte le pagine.
-- Aggiorna il link a Behance con il tuo profilo (LinkedIn è già collegato).
+- Il repository deve chiamarsi `ManuelF55.github.io`, così il sito sta alla radice: `https://manuelf55.github.io/`. Lo stesso indirizzo è nei tag Open Graph di tutte le pagine (`og:url` e `og:image`).
 - Collega i bottoni "Vedi il progetto completo" di Lamon Calling e Forma (ora puntano a `#`).
 - Sostituisci le immagini temporanee in `img/placeholder/` con gli screenshot veri.
 
